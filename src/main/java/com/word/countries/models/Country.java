@@ -39,7 +39,7 @@ public class Country {
     private Long id_country;
 
     @NotEmpty(message = "¡El campo code_country no debe ser vacío!")
-    @Size(min = 4, max = 255, message = "¡El campo code_country no debe ser entre 4 y 255 carácteres!")
+    @Size(min = 2, max = 255, message = "¡El campo code_country debe ser entre 4 y 255 carácteres!")
     @Column(name = "code_country")
     private String code_country;
 
@@ -109,7 +109,7 @@ public class Country {
     private Integer capital_country;
 
     @NotEmpty(message = "¡El campo head_of_state_country no debe ser vacío!")
-    @Size(min = 4, max = 255, message = "¡El campo head_of_state_country no debe ser entre 4 y 255 carácteres!")
+    @Size(min = 2, max = 255, message = "¡El campo head_of_state_country no debe ser entre 4 y 255 carácteres!")
     @Column(name = "head_of_state_code2")
     private String head_of_state_code2;
 

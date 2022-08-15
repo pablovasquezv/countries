@@ -1,0 +1,18 @@
+{
+  "id_country": 1,
+  "code_country": "ABW",
+  "name_country": "Aruba",
+  "continent_country": "North America",
+  "region_country": "Caribbean",
+  "surface_area_country": 193.00,
+  "indep_year_country": 0,
+  "population_country": 103000,
+  "life_expectancy_country": 78.4,
+  "gnp_country": 828.00,
+  "gnp_old_country": 793.00,
+  "local_name_country": "Aruba",
+  "government_form_country": "Nonmetropolitan Territory of The Netherlands",
+  "head_of_state_country": "Beatrix",
+  "capital_country": 129,
+  "head_of_state_code2": "AW"
+}
