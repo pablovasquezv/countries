@@ -41,7 +41,7 @@ public class City {
     private Long id_city;
 
     @NotEmpty(message = "¡El campo name_city no debe ser vacío!")
-    @Size(min = 4, max = 255, message = "¡El campo name_city no debe ser entre 4 y 255 carácteres!")
+    @Size(min = 2, max = 255, message = "¡El campo name_city no debe ser entre 4 y 255 carácteres!")
     @Column(name = "name_city")
     private String name_city;
 
@@ -51,7 +51,7 @@ public class City {
     private String country_code_city;
 
     @NotEmpty(message = "¡El campo district no debe ser vacío!")
-    @Size(min = 4, max = 255, message = "¡El campo district no debe ser entre 4 y 255 carácteres!")
+    @Size(min = 2, max = 255, message = "¡El campo district no debe ser entre 4 y 255 carácteres!")
     @Column(name = "district_city")
     private String district_city;
 
@@ -61,7 +61,7 @@ public class City {
     private Integer population_city;
 
     // <----- Relationships ----->
-    @JsonIgnore
+    //@JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @NotNull(message = "¡El id del País no debe ser vacío!")
     @JoinColumn(name="country_id")

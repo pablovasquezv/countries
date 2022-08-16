@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class LanguagueServiceImplements implements ILanguagueImplementServices {
+public class LanguagueServicesImplements implements ILanguagueImplementServices {
     @Autowired
     private ILanguageRepository iLanguageRepository;
     @Autowired
@@ -38,6 +38,7 @@ public class LanguagueServiceImplements implements ILanguagueImplementServices {
     @Override
     @Transactional(readOnly = true)
     public Page<Language> findAll(Pageable pageable) {
+
         return iLanguageRepository.findAll(pageable);
     }
 
@@ -48,6 +49,7 @@ public class LanguagueServiceImplements implements ILanguagueImplementServices {
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void delete(long id) {
         iLanguageRepository.deleteById(id);
     }

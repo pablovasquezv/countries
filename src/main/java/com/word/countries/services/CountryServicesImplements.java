@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class CountryServicesImplemts implements ICountryImplementServices {
+public class CountryServicesImplements implements ICountryImplementServices {
 
     @Autowired
     private ICountryRepository iCountryRepository;
@@ -40,10 +40,12 @@ public class CountryServicesImplemts implements ICountryImplementServices {
     @Override
     @Transactional(readOnly = true)
     public Country findById(long id) {
+
         return iCountryRepository.findById(id);
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void delete(long id) {
         iCountryRepository.deleteById(id);
     }

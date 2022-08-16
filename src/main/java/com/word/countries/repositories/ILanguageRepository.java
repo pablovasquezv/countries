@@ -17,11 +17,12 @@ public interface ILanguageRepository extends JpaRepository<Language, Long> {
     public List<Language> findAll(Sort sort);
 
     // Contar la cantidad de Lenguajes que vienen en la búsqueda y paginarlos
-    @Query(value = "select l from Language l left join fetch l.country", countQuery = "select count(l) from Language l left join l.country")
+    @Query(value = "select l from Language l left join fetch l.country",
+            countQuery = "select count(l) from Language l left join l.country")
 
     public Page<Language> findAll(Pageable pageable);
 
-    // Buscar un Producto por ID
+    // Buscar por ID
     @Query(value = "select l from Language l left join fetch l.country where l.id=:id")
     public Language findById(long id);
 }
