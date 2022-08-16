@@ -1,4 +1,5 @@
 package com.word.countries.models;
+
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Pablo
- *
  */
 
 @Data
@@ -58,32 +58,32 @@ public class Country {
     @Column(name = "region_country")
     private String region_country;
 
-    @NotNull(message= "El campo surface_area_country debe ser vacío")
+    @NotNull(message = "El campo surface_area_country debe ser vacío")
     @Min(value = 0, message = "¡El campo surface_area_country debe ser mayor a 0!")
     @Column(name = "surface_area_country")
     private Double surface_area_country;
 
-    @NotNull(message= "El campo indep_year_country debe ser vacío")
+    @NotNull(message = "El campo indep_year_country debe ser vacío")
     @Min(value = 0, message = "¡El campo surface_area_city debe ser mayor a 0!")
     @Column(name = "indep_year_country")
     private Short indep_year_country;
 
-    @NotNull(message= "El campo population_country debe ser vacío")
+    @NotNull(message = "El campo population_country debe ser vacío")
     @Min(value = 0, message = "¡El campo population_country debe ser mayor a 0!")
     @Column(name = "population_country")
     private Integer population_country;
 
-    @NotNull(message= "El campo life_expectancy_country debe ser vacío")
+    @NotNull(message = "El campo life_expectancy_country debe ser vacío")
     @Min(value = 0, message = "¡El campo life_expectancy_country debe ser mayor a 0!")
     @Column(name = "life_expectancy_country")
     private Double life_expectancy_country;
 
-    @NotNull(message= "El campo gnp_country debe ser vacío")
+    @NotNull(message = "El campo gnp_country debe ser vacío")
     @Min(value = 0, message = "¡El campo gnp_country debe ser mayor a 0!")
     @Column(name = "gnp_country")
     private Double gnp_country;
 
-    @NotNull(message= "El campo gnp_old_country debe ser vacío")
+    @NotNull(message = "El campo gnp_old_country debe ser vacío")
     @Min(value = 0, message = "¡El campo gnp_old_country debe ser mayor a 0!")
     @Column(name = "gnp_old_country")
     private Double gnp_old_country;
@@ -103,7 +103,7 @@ public class Country {
     @Column(name = "head_of_state_country")
     private String head_of_state_country;
 
-    @NotNull(message= "El campo capital_country debe ser vacío")
+    @NotNull(message = "El campo capital_country debe ser vacío")
     @Min(value = 0, message = "¡El campo capital_country debe ser mayor a 0!")
     @Column(name = "capital_country")
     private Integer capital_country;
@@ -115,10 +115,10 @@ public class Country {
 
     // <----- Relationships ----->
     // cities
-    @OneToMany(mappedBy="country", fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "country")
     private List<City> cities;
 
-    @OneToMany(mappedBy="country", fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "country")
     private List<Language> languages;
 
     // This will not allow the createdAt column to be updated after creation

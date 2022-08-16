@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class CountryServices implements ICountryImplementServices {
+public class CountryServicesImplemts implements ICountryImplementServices {
 
     @Autowired
     private ICountryRepository iCountryRepository;
